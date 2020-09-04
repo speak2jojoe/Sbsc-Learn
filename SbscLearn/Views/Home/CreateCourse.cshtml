@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CreateCourse</title>
+</head>
+<body>
+    <div>
+        @if (ViewBag.Message == "CourseAdded")
+        {
+            <span style="font-size:small;color:green;">Course created successfully</span>
+        }
+        else if (ViewBag.Message == "CourseFailed")
+        {
+            <span style="font-size:small;color:orange;">Course creation failed</span>
+        }
+        else { }
+        @using (Html.BeginForm("CreateCourse", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+
+            <input type="text" name="CourseName" id="CourseName" placeholder="Course Name" /><br /><br />
+
+            <input type="text" name="CourseId" id="CourseId" placeholder="Create Id" /><br /><br />
+
+            @*<input type="file" name="file" id="file" />*@
+            @Html.TextBox("file", "", new { type = "file" })
+
+            <br /><br /><input type="submit" id="submit" value="Create Course" />
+        }
+    </div>
+</body>
+</html>

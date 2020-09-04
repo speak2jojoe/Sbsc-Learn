@@ -1,0 +1,26 @@
+﻿@model IEnumerable<SbscLearn.Models.UsersListModel>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ListUsers</title>
+</head>
+<body>
+    <div>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.FirstName</td>
+            <td>@item.LastName</td>
+            <td>@item.CourseId</td>
+            <td>@item.Score</td>
+        </tr>
+        }
+    </div>
+</body>
+</html>
